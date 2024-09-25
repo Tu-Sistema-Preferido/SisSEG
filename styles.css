@@ -1,0 +1,96 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0208;
+    color: #00ff00;
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    text-align: center;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    width: 400px;
+    background-color: #0d0208;
+    box-shadow: 0 0 10px #00ff00;
+    position: relative;
+}
+
+/* Mantener el tamaño del video para evitar que el diseño cambie */
+video {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #00ff00;
+    background-color: black;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+select {
+    background-color: #0d0208;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background: linear-gradient(45deg, #0d0208, #00ff00);
+    color: #0d0208;
+    border: 1px solid #00ff00;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s, box-shadow 0.5s, color 0.5s;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+}
+
+button:hover {
+    background: #00ff00;
+    color: #0d0208;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+}
+
+button:disabled {
+    background-color: #555;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block;
+}
+
+/* El selector de cámaras no cambiará el diseño cuando no esté visible */
+#cameraSelect {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
