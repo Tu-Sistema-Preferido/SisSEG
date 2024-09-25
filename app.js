@@ -33,10 +33,6 @@ function getCameras() {
 
 // Función para cambiar la cámara
 function startCamera(deviceId) {
-    if (currentStream) {
-        currentStream.getTracks().forEach(track => track.stop()); // Detenemos el stream actual
-    }
-
     navigator.mediaDevices.getUserMedia({
         video: {
             deviceId: deviceId ? { exact: deviceId } : undefined
@@ -44,8 +40,17 @@ function startCamera(deviceId) {
         audio: true // Incluimos el audio
     })
     .then(stream => {
+        if (currentStream) {
+            currentStream.getTracks().forEach(track => track.stop()); // Detenemos el stream anterior
+        }
+
         currentStream = stream;
         videoElement.srcObject = stream;
+
+        // Si la grabación ya está activa, no la detenemos
+        if (mediaRecorder) {
+            mediaRecorder.stream.getTracks().forEach(track => track.stop()); // Detenemos las pistas anteriores
+        }
 
         mediaRecorder = new MediaRecorder(stream);
 
